@@ -6,23 +6,18 @@ import {
     GraphQLObjectType,
     GraphQLString
 } from 'graphql';
-import {fakeDatabase} from '../../FakeDatabase';
+import { fakeDatabase } from '../../FakeDatabase';
 import { Author } from './Author';
 import { Comment } from './Comment';
 
 export const Post = new GraphQLObjectType({
-    name: 'Author',
-    description: 'All the details of a comment',
+    name: 'Post',
+    description: 'All the details of a post',
     fields: () => ({
         id: { type: GraphQLInt },
         title: { type: GraphQLString },
         content: { type: GraphQLString },
-        author: {
-            type: Author,
-            resolve: (post) => {
-                return fakeDatabase.getAuthor(post.author)
-            }
-        },
+        author: { type: GraphQLString },
         comments: {
             type: new GraphQLList(Comment),
             resolve: (post) => {

@@ -30,7 +30,7 @@ class FakeDatabase {
             { id: 2, postId: 1, name: 'Nick', content: 'Great article.'},
             { id: 3, postId: 3, name: 'Peter', content: 'Good luck with graphQl ;)'},
 
-        ]
+        ];
     };
 
     getBlogPosts() {

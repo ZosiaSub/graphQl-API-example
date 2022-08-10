@@ -1,7 +1,7 @@
 import {GraphQLInputObjectType, GraphQLInt, GraphQLNonNull, GraphQLObjectType, GraphQLString} from 'graphql';
 
 export const Comment = new GraphQLObjectType({
-    name: 'Author',
+    name: 'Comment',
     description: 'All the details of a comment',
     fields: () => ({
         id: { type: GraphQLInt },
