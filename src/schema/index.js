@@ -1,4 +1,4 @@
-import {GraphQLSchema, GraphQLObjectType, GraphQLString} from 'graphql';
+import { graphql,GraphQLSchema, GraphQLObjectType, GraphQLString, buildSchema} from 'graphql';
 
 import posts from './queries/posts';
 import post from './queries/post';
@@ -10,17 +10,11 @@ import addComment from './mutations/addComment';
 
 const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
-        name: 'RootQuery',
+        name: 'RootQueryType',
         fields: {
             ...posts,
             ...post,
-            ...author,
-            hello: {
-                type: GraphQLString,
-                resolve: () => {
-                    return 'Hello there'
-                }
-            }
+            ...author
         }
     }),
     mutation: new GraphQLObjectType({

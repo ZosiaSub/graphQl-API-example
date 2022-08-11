@@ -3,7 +3,7 @@ import { Author } from '../types/Author';
 import { fakeDatabase } from '../../FakeDatabase';
 
 export default {
-    posts: {
+    author: {
         type: Author,
         description: 'Get a specific author',
         args: {

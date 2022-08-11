@@ -3,7 +3,7 @@ import { Post } from '../types/Post';
 import { fakeDatabase } from '../../FakeDatabase';
 
 export default {
-    posts: {
+    post: {
         type: Post,
         description: 'Get details about a specific post',
         args: {

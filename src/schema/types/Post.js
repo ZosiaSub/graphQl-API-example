@@ -17,7 +17,12 @@ export const Post = new GraphQLObjectType({
         id: { type: GraphQLInt },
         title: { type: GraphQLString },
         content: { type: GraphQLString },
-        author: { type: GraphQLString },
+        author: {
+        type: Author,
+        resolve: (post) => {
+            return fakeDatabase.getAuthor(post.author);
+            }
+        },
         comments: {
             type: new GraphQLList(Comment),
             resolve: (post) => {
